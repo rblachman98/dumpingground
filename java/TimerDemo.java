@@ -13,7 +13,7 @@ public class TimerDemo{
 				out.println("What String value do I have: ");
 				MyAnswer = input.nextLine();
 				if(MyAnswer.length() != ANSWER.length()){
-					out.println("Given answer isn't long enough");
+					out.println("Given answer isn't the righ length");
 					continue;
 				}
 				if(!(ANSWER.equals(MyAnswer))){
