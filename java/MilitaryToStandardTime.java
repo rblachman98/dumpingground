@@ -1,5 +1,7 @@
 public class MilitaryToStandardTime{
 	static String TimeOfDay;
+	static final int MINUTE = 60;
+	static final HOUR = MINUTE * MINUTE;
 
 	enum DAY{
 		AM("a.m."), PM("p.m.");
@@ -51,7 +53,7 @@ public class MilitaryToStandardTime{
 	}
 
 	private static void validateMinutes(int minutes) throws IllegalArgumentException{
-		if( (minutes >= 60) || (minutes < 0) ){
+		if( (minutes >= MINUTE) || (minutes < 0) ){
 			throw new IllegalArgumentException("NOT A VALID MINUTE!!!");
 		}
 	}
