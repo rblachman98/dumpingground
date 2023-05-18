@@ -3,6 +3,8 @@ import java.util.Scanner;
 
 public class TimerDemo{
 	static String ANSWER = "abcd";
+	static final MINUTE = 60;
+	static final HOUR = MINUTE * MINUTE;
 
 	public static void main(String[] args){
 		Timer timer = new Timer();
@@ -48,25 +50,25 @@ class Timer{
 	
 	public String simpleFormat(int time){
 		String separator = ":";
-		String output = formatTime(time/(60*60), separator)
-			+formatTime( ( (time % (60*60) ) /60 ), separator)
-			+formatTime(time%60 , "");
+		String output = formatTime(time/(HOUR), separator)
+			+formatTime( ( (time % (HOUR) ) /MINUTE ), separator)
+			+formatTime(time%MINUTE , "");
 		return output;
 	}
 	
 	public String formatHours(int time){
 		String label = " Hours ";
-		return formatTime(time/(60*60), label);
+		return formatTime(time/(HOUR), label);
 	}
 	
 	public String formatMinutes(int time){
 		String label = " Minutes ";
-		return formatTime((time%(60*60))/60, label);
+		return formatTime((time%(HOUR))/MINUTE, label);
 	}
 	
 	public String formatSeconds(int time){
 		String label = " Seconds ";
-		return formatTime(time%60, label);
+		return formatTime(time%MINUTE, label);
 	}
 	
 	public String formatTime(int time, String label){
